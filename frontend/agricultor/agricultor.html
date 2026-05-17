@@ -4,25 +4,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfil do Agricultor</title>
-  <link rel="stylesheet" href="../css/style.css">
-
+  <title>Painel do Produtor - Agroinvest</title>
+  <link rel="stylesheet" href="./agricultor.css">
 </head>
 
 <body>
-  <nav class=" navbar">
+  <nav class="navbar">
     <div class="marca">
       <p class="titulo">Agroinvest</p>
       <p class="subtitulo">Painel do Produtor</p>
     </div>
     <div class="info-user">
-      <div class="perfil">AG</div>
-    </div>
-    <div class="botao">
-      <button class="btn-cadastrar">Cadastrar Projeto</button>
+      <button class="btn-novo-projeto">
+        <span class="mais-icone">+</span> Cadastrar Projeto
+      </button>
+      <div class="perfil-produtor">AG</div>
     </div>
   </nav>
 
+  <div class="container">
+    <div class="card">
+      <p>Projetos Ativos</p>
+      <div class="conteudo-valor">
+        <span class="valor-grande">1</span>
+        <span class="indicador-positivo">🌱</span>
+      </div>
+    </div>
+    <div class="card">
+      <p>Total Captado</p>
+      <div class="conteudo-valor">
+        <span class="valor-real-verde">R$ 70.000</span>
+      </div>
+    </div>
+    <div class="card">
+      <p>Investidores</p>
+      <div class="conteudo-valor">
+        <span class="valor-grande">30</span>
+      </div>
+    </div>
+    <div class="card">
+      <p>Taxa de Sucesso</p>
+      <div class="conteudo-valor">
+        <span class="valor-grande-positivo">100%</span>
+        <span class="indicador-positivo">↗</span>
+      </div>
+    </div>
+  </div>
+
+  <h1>Meus Projetos</h1>
+
+  <div class="lista-projetos">
+
+    <div class="projeto-item">
+      <div class="projeto-cabecalho">
+        <div>
+          <h2>Plantio de Milho - Safra 2026</h2>
+          <p class="projeto-sub">18 investidores • ROI 16.5%</p>
+        </div>
+        <span class="status-tag ativo">Ativo</span>
+      </div>
+
+      <div class="projeto-progresso">
+        <div class="progresso-valores">
+          <span>Captado</span>
+          <strong>R$ 45.000 de R$ 60.000</strong>
+        </div>
+        <div class="barra-fundo">
+          <div class="barra-preenchida" style="width: 75%;"></div>
+        </div>
+      </div>
+
+      <div class="projeto-botoes">
+        <button class="btn-secundario">Ver Detalhes</button>
+        <button class="btn-secundario">Relatório</button>
+      </div>
+    </div>
+
+    <div class="projeto-item">
+      <div class="projeto-cabecalho">
+        <div>
+          <h2>Horta Orgânica Comercial</h2>
+          <p class="projeto-sub">12 investidores • ROI 14.2%</p>
+        </div>
+        <span class="status-tag finalizado">Finalizado</span>
+      </div>
+
+      <div class="projeto-progresso">
+        <div class="progresso-valores">
+          <span>Captado</span>
+          <strong>R$ 25.000 de R$ 25.000</strong>
+        </div>
+        <div class="barra-fundo">
+          <div class="barra-preenchida" style="width: 100%;"></div>
+        </div>
+      </div>
+
+      <div class="projeto-botoes">
+        <button class="btn-secundario">Ver Detalhes</button>
+        <button class="btn-secundario">Relatório</button>
+      </div>
+    </div>
+
+  </div>
 </body>
 
 </html>
