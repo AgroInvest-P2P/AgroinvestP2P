@@ -1,0 +1,116 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* imagem de fundo */
+    background-image: url("imagem.jpg/agrotech\ fundo\ de\ site\'.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* caixa do login */
+.login-box{
+    background-color: rgba(0, 0, 0, 0.7);
+
+    padding: 40px;
+
+    border-radius: 15px;
+
+    width: 300px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    color: white;
+
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+}
+
+/* titulo */
+.login-box h1{
+    text-align: center;
+}
+
+/* inputs */
+.login-box input{
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+}
+
+/* botão */
+.login-box button{
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #00b894;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.login-box button:hover{
+    background-color: #019875;
+}
+
+
+#mensagem{
+    text-align: center;
+
+    color: red;
+}
+
+
+/* Estilo para organizar a label e o select */
+.select-box {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 20px; /* Dá espaço antes do botão Entrar */
+  width: 100%;
+}
+
+.select-box label {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+/* Deixa o select com o mesmo visual arredondado e elegante dos inputs */
+.select-box select {
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background-color: white;
+  color: #333;
+  outline: none;
+  cursor: pointer;
+}
+
+.select-box select:focus {
+  border-color: #00a859; /* Altera para a cor verde ao clicar */
+}
+

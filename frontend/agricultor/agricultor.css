@@ -159,11 +159,7 @@ h1 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-.imagem-card {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-}
+
 
 .conteudo-card2 { padding: 20px; }
 .card2 h2 { font-size: 18px; color: #002d32; margin: 0 0 8px 0; }

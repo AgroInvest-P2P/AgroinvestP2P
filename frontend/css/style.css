@@ -118,7 +118,6 @@ body {
   font-weight: 500;
 }
 
-/* --- TÍTULO DA SEÇÃO --- */
 h1 {
   font-size: 20px;
   font-weight: bold;
@@ -219,3 +218,4 @@ h1 {
 .btn-investir:hover {
   background-color: #008f4a;
 }
+
