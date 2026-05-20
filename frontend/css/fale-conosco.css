@@ -1,0 +1,101 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  color: #333;
+}
+
+/* --- NAVBAR (Topo padrão das páginas) --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 12px 40px;
+  border-bottom: 1px solid #eee;
+}
+
+.titulo {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0;
+  color: #002d32;
+}
+
+.subtitulo {
+  font-size: 14px;
+  color: #777;
+  margin: 0;
+}
+
+.info-user {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* --- TELA EXCLUSIVA: FALE CONOSCO --- */
+
+/* Container para centralizar a caixa branca vertical e horizontalmente */
+.container-contato {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 70vh; /* Garante que fique bem centralizado na tela */
+}
+
+/* Caixa branca do formulário */
+.contato-box {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  max-width: 500px;
+  width: 100%;
+  text-align: left;
+}
+
+.contato-box h1 {
+  margin: 0 0 10px 0;
+  font-size: 24px;
+  color: #002d32;
+}
+
+.contato-sub {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+/* Estrutura de cada grupo de campo (Label + Input) */
+.campo-grupo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.campo-grupo label {
+  font-size: 13px;
+  font-weight: bold;
+  color: #002d32;
+  margin-bottom: 6px;
+}
+
+/* Estilo padronizado para inputs, select e o textarea */
+.campo-grupo input,
+.campo-grupo select,
+.campo-grupo textarea {
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  outline: none;
+  font-family: Arial, sans-serif;
+  background-color: #fbfbfb;
+  transition:
+    border-color 0.2s,
+    background-color 0.2s;
+}
