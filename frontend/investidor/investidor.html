@@ -16,76 +16,79 @@
       <p class="subtitulo">Crowdfunding Agrícola P2P</p>
     </div>
     <div class="info-user">
+      <a href="../duvida/fale-conosco.html" class="btn-link-nav">Suporte</a>
+      <a href="../login/login.html" class="btn-link-nav" style="margin-right: 25px;">Sair</a>
       <div class="bloco-saldo">
         <p class="titulo-saldo">Saldo</p>
-        <p class="valor-saldo">R$ 10.000,00</p>
+        <p class="valor-saldo" id="saldo-investidor">R$ 10.000,00</p>
       </div>
       <div class="perfil">IV</div>
     </div>
   </nav>
 
-
-
   <div class="container">
     <div class="card">
       <p>Investimentos Ativo</p>
       <div class="conteudo-valor">
-        <span class="valor-grande">12</span>
-        <span class="indicador-positivo">+3 este mês</span>
+        <span class="valor-grande" id="stat-investimentos-ativos">0</span>
+        <span class="indicador-positivo" id="stat-novos-mes">+0 este mês</span>
       </div>
     </div>
     <div class="card">
       <p>Retorno Médio</p>
       <div class="conteudo-valor">
-        <span class="valor-grande-positivo">12.9%</span>
+        <span class="valor-grande-positivo" id="stat-retorno-medio">12.9%</span>
       </div>
     </div>
     <div class="card">
       <p>Capital Investido</p>
       <div class="conteudo-valor">
-        <span class="valor-real">R$ 5.000,00</span>
+        <span class="valor-real" id="stat-capital-investido">R$ 0,00</span>
       </div>
     </div>
     <div class="card">
       <p>Retorno Projetado</p>
       <div class="conteudo-valor">
-        <span class="valor-real-verde">R$ 645,00</span>
+        <span class="valor-real-verde" id="stat-retorno-projetado">R$ 0,00</span>
       </div>
     </div>
   </div>
-  <h1>Investimentos disponiveis</h1>
-  <div class="card2">
-    <img src="../img/soja.png" alt="Soja" class="imagem-card">
 
-    <div class="conteudo-card2">
-      <h2>Plantio de Soja Orgânica 2026</h2>
-      <p class="info-secundaria">📍 Goiás, GO • 👥 34 investidores</p>
+  <h1>Investimentos disponíveis</h1>
+  
+  <div class="container2" id="lista-investimentos" style="flex-wrap: wrap;">
+    <!-- Os projetos serão carregados dinamicamente via Javascript -->
+  </div>
 
-      <!-- Parte do Captado -->
-      <div style="display: flex; justify-content: space-between; font-size: 12px;">
-        <span>Captado</span>
-        <strong>R$ 128k de R$ 170k</strong>
-      </div>
-      <div class="progresso-barra">
-        <div class="progresso-preenchido" style="width: 85%;"></div>
-      </div>
-      <small style="color: #999; font-size: 11px;">85.0% do objetivo</small>
-
-      <!-- Bloco de ROI Verde -->
-      <div class="bloco-roi-card">
-        <div>
-          <small style="color: #00a859; display: block;">Retorno Projetado (ROI)</small>
-          <span class="roi-valor">18.5%</span>
-        </div>
-        <span>📈</span>
+  <!-- MODAL DE DETALHES E INVESTIMENTO -->
+  <div id="modal-investimento" class="modal">
+    <div class="modal-conteudo">
+      <span class="fechar-modal" onclick="fecharModal()">&times;</span>
+      <h2 id="modal-titulo">Plantio de Soja Orgânica 2026</h2>
+      
+      <p id="modal-detalhes" style="color: #555; line-height: 1.5; font-size: 14px; margin-bottom: 15px;">
+        Detalhes do projeto aqui...
+      </p>
+      
+      <div style="background-color: #f8f9fa; padding: 15px; border-radius: 8px; margin: 15px 0;">
+        <p style="margin: 5px 0; font-size: 13px; color: #555;">📍 Localização: <strong id="modal-local">Goiás, GO</strong></p>
+        <p style="margin: 5px 0; font-size: 13px; color: #555;">📈 ROI Estimado: <strong id="modal-roi" style="color: #00a859;">18.5%</strong></p>
+        <p style="margin: 5px 0; font-size: 13px; color: #555;">📅 Prazo de Retorno: <strong id="modal-prazo">Junho 2026</strong></p>
+        <p style="margin: 5px 0; font-size: 13px; color: #555;">📊 Progresso: <strong id="modal-progresso-texto">R$ 128k de R$ 170k</strong></p>
       </div>
 
-      <!-- Info de Prazo -->
-      <p style="font-size: 13px; color: #555;">Prazo: <strong>Junho 2026</strong></p>
+      <div class="campo-grupo">
+        <label for="valor-aporte">Quanto você quer investir neste projeto? (R$)</label>
+        <input type="number" id="valor-aporte" required min="50" placeholder="Digite o valor (mínimo R$ 50)">
+        <small style="color: #666; font-size: 11px; margin-top: 4px;">Seu saldo disponível: <strong id="modal-saldo-disponivel" style="color: #00a859;">R$ 10.000,00</strong></small>
+      </div>
 
-      <button class="btn-investir">Investir Agora</button>
+      <button onclick="confirmarAporte()" class="btn-investir">Confirmar Investimento</button>
     </div>
   </div>
+
+  <!-- Inclusão dos Scripts Javascript -->
+  <script src="investidor.js"></script>
 </body>
 
 </html>

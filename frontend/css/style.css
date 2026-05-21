@@ -16,6 +16,21 @@ body {
   border-bottom: 1px solid #eee;
 }
 
+.btn-link-nav {
+  color: #002d32;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+  margin-right: 15px;
+  display: inline-block;
+  align-self: center;
+}
+
+.btn-link-nav:hover {
+  color: #00a859;
+}
+
 .titulo {
   font-weight: bold;
   font-size: 20px;
@@ -218,4 +233,91 @@ h1 {
 .btn-investir:hover {
   background-color: #008f4a;
 }
+
+/* --- ESTILOS DO MODAL DE DETALHES E APORTE --- */
+.modal {
+  display: none; /* Fica invisível por padrão */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Escurece o fundo */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Classe que adicionamos via Javascript para mostrar o modal */
+.modal.mostrar {
+  display: flex;
+}
+
+.modal-conteudo {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 480px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  animation: surgirModal 0.3s ease-out;
+}
+
+@keyframes surgirModal {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.fechar-modal {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.fechar-modal:hover {
+  color: #333;
+}
+
+.modal-conteudo h2 {
+  margin-top: 0;
+  color: #002d32;
+  font-size: 20px;
+  border-bottom: 2px solid #00a859;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+}
+
+.campo-grupo {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.campo-grupo label {
+  font-size: 13px;
+  font-weight: bold;
+  color: #444;
+}
+
+.campo-grupo input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.campo-grupo input:focus {
+  border-color: #00a859;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 168, 89, 0.2);
+}
+
 

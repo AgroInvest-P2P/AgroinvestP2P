@@ -15,7 +15,9 @@
       <p class="subtitulo">Painel do Produtor</p>
     </div>
     <div class="info-user">
-      <button class="btn-novo-projeto">
+      <a href="../duvida/fale-conosco.html" class="btn-link-nav">Suporte</a>
+      <a href="../login/login.html" class="btn-link-nav" style="margin-right: 15px;">Sair</a>
+      <button class="btn-novo-projeto" onclick="abrirModal()">
         <span class="mais-icone">+</span> Cadastrar Investimento
       </button>
       <div class="perfil-produtor">AG</div>
@@ -26,26 +28,26 @@
     <div class="card">
       <p>Projetos Ativos</p>
       <div class="conteudo-valor">
-        <span class="valor-grande">1</span>
+        <span class="valor-grande" id="card-projetos-ativos">0</span>
         <span class="indicador-positivo">🌱</span>
       </div>
     </div>
     <div class="card">
       <p>Total Captado</p>
       <div class="conteudo-valor">
-        <span class="valor-real-verde">R$ 70.000</span>
+        <span class="valor-real-verde" id="card-total-captado">R$ 0</span>
       </div>
     </div>
     <div class="card">
       <p>Investidores</p>
       <div class="conteudo-valor">
-        <span class="valor-grande">30</span>
+        <span class="valor-grande" id="card-total-investidores">0</span>
       </div>
     </div>
     <div class="card">
       <p>Taxa de Sucesso</p>
       <div class="conteudo-valor">
-        <span class="valor-grande-positivo">100%</span>
+        <span class="valor-grande-positivo" id="card-taxa-sucesso">100%</span>
         <span class="indicador-positivo">↗</span>
       </div>
     </div>
@@ -53,59 +55,58 @@
 
   <h1>Meus Projetos</h1>
 
-  <div class="lista-projetos">
-
-    <div class="projeto-item">
-      <div class="projeto-cabecalho">
-        <div>
-          <h2>Plantio de Milho - Safra 2026</h2>
-          <p class="projeto-sub">18 investidores • ROI 16.5%</p>
-        </div>
-        <span class="status-tag ativo">Ativo</span>
-      </div>
-
-      <div class="projeto-progresso">
-        <div class="progresso-valores">
-          <span>Captado</span>
-          <strong>R$ 45.000 de R$ 60.000</strong>
-        </div>
-        <div class="barra-fundo">
-          <div class="barra-preenchida" style="width: 75%;"></div>
-        </div>
-      </div>
-
-      <div class="projeto-botoes">
-        <button class="btn-secundario">Ver Detalhes</button>
-        <button class="btn-secundario">Relatório</button>
-      </div>
-    </div>
-
-    <div class="projeto-item">
-      <div class="projeto-cabecalho">
-        <div>
-          <h2>Horta Orgânica Comercial</h2>
-          <p class="projeto-sub">12 investidores • ROI 14.2%</p>
-        </div>
-        <span class="status-tag finalizado">Finalizado</span>
-      </div>
-
-      <div class="projeto-progresso">
-        <div class="progresso-valores">
-          <span>Captado</span>
-          <strong>R$ 25.000 de R$ 25.000</strong>
-        </div>
-        <div class="barra-fundo">
-          <div class="barra-preenchida" style="width: 100%;"></div>
-        </div>
-      </div>
-
-      <div class="projeto-botoes">
-        <button class="btn-secundario">Ver Detalhes</button>
-        <button class="btn-secundario">Relatório</button>
-      </div>
-    </div>
-
+  <div class="lista-projetos" id="lista-projetos-container">
+    <!-- Os projetos serão carregados dinamicamente via Javascript -->
   </div>
+
+  <!-- MODAL DE CADASTRO DE NOVO PROJETO -->
+  <div id="modal-cadastro" class="modal">
+    <div class="modal-conteudo">
+      <span class="fechar-modal" onclick="fecharModal()">&times;</span>
+      <h2>Cadastrar Novo Projeto</h2>
+      
+      <form id="form-cadastro" onsubmit="salvarNovoProjeto(event)">
+        <div class="campo-grupo">
+          <label for="titulo-projeto">Título do Projeto</label>
+          <input type="text" id="titulo-projeto" required placeholder="Ex: Plantio de Soja Orgânica 2026">
+        </div>
+        
+        <div class="campo-grupo">
+          <label for="roi-projeto">Retorno Projetado (ROI %)</label>
+          <input type="number" step="0.1" id="roi-projeto" required placeholder="Ex: 18.5">
+        </div>
+        
+        <div class="campo-grupo">
+          <label for="meta-projeto">Meta de Captação (R$)</label>
+          <input type="number" id="meta-projeto" required placeholder="Ex: 170000">
+        </div>
+        
+        <div class="campo-grupo">
+          <label for="local-projeto">Localização (Cidade - Estado)</label>
+          <input type="text" id="local-projeto" required placeholder="Ex: Rio Verde - GO">
+        </div>
+        
+        <div class="campo-grupo">
+          <label for="prazo-projeto">Prazo para Retorno</label>
+          <input type="text" id="prazo-projeto" required placeholder="Ex: Junho 2026">
+        </div>
+        
+        <div class="campo-grupo">
+          <label for="imagem-projeto">Tipo de Cultivo (Imagem)</label>
+          <select id="imagem-projeto">
+            <option value="../img/soja.png">Soja</option>
+            <option value="../img/milho.png">Milho</option>
+            <option value="../img/horta.png">Horta / Legumes</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-salvar">Salvar Projeto</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Inclusão dos Scripts Javascript -->
+  <script src="agricultor.js"></script>
 </body>
 
 </html>
